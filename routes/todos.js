@@ -4,8 +4,8 @@ var todosCtrl = require('../controllers/todos');
 
 
 /* GET users listing. */
-router.get('/todos', todosCtrl.index);
-router.post('/todos', todosCtrl.create);
-router.delete('/todos/:id', todosCtrl.delete);
+router.get('/', todosCtrl.index);
+router.post('/', todosCtrl.create);
+router.delete('/:id', todosCtrl.delete);
 
 module.exports = router;
