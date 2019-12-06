@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>To-dos</title>
+</head>
+
+<body>
+    <h1>To-do List:</h1>
+    <table>
+        <thead>
+            <th>Task</th>
+            <th>Remove</th>
+        </thead>
+        <% todos.forEach(function(to){ %>
+           <tr><td> <%=to.todo%> </td>
+            <form action='/todos/<%=to._id%>?_method=DELETE'
+                class="delete-form" method="POST">
+           <td><button type="submit" class="btn red-text">X</button></td></tr>
+            </form>
+           <%})%>
+        </table>
+    <form action="/todos" method="POST">
+        <label>Add To-do:
+        <input type="text" name="todo">
+        </label><br>
+        <button type="submit" class="btn white-text">Submit</button>
+    </form>
+</body>
+</html>
